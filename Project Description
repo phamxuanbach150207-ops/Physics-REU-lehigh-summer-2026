@@ -1,0 +1,70 @@
+# Physics REU 2026 — Biaggio Research Group, Lehigh University
+
+Undergraduate research conducted Summer 2026 in the Biaggio Research Group (Lehigh University) 
+as part of the NSF REU program. This repository documents experimental work, data analysis 
+scripts, and results across three projects investigating singlet fission, triplet-pair spin dynamics, 
+and nonlinear optics in organic semiconductors.
+
+## Research Context
+
+Singlet fission is a process in which a photoexcited singlet exciton (S₁) splits into two 
+spin-entangled triplet excitons (T₁+T₁). Because the triplet pair begins in a net spin-0 state, 
+its spin wavefunction evolves coherently under the triplet-pair Hamiltonian — the sum of the 
+zero-field splitting (ZFS) term and the Zeeman term from any applied magnetic field. When the 
+pair re-encounters, fusion back to a singlet (and thus photon emission) requires spin-0 character, 
+so the time-oscillating singlet probability directly modulates fluorescence — producing measurable 
+quantum beats in time-resolved photoluminescence (TDPL) data.
+
+This work builds on a recently published result from the group (Rex, Pham Xuan, Curran, Biaggio, 
+*On the amplitude of fluorescence quantum beats from the fusion of entangled triplet exciton 
+pairs*) and focuses on extending that framework to magnetic-field-dependent PL enhancement, 
+cryogenic transport measurements, and a proof-of-concept ultrafast detection scheme.
+
+## Projects
+
+### Project 1 — Magnetic Field Induced Photoluminescence Enhancement
+Measures how an applied magnetic field changes total photon emission and the time-resolved 
+fluorescence shape in rubrene, tetracene, and DPH. The field shifts spin eigenstate energies, 
+altering the integrated singlet-regeneration probability and thus the fluorescence yield. Key 
+variables: field strength, field orientation (a/b/c axes and ab-plane rotation), temperature, 
+excitation density (geminate vs. non-geminate triplet-pair populations), and pulsed vs. CW 
+illumination.
+
+PL enhancement is quantified as ΔPL/PL₀ = [PL(B) − PL(0)] / PL(0).
+
+TDPL traces are fit with a bi-exponential + bi-power-law baseline; quantum beats are isolated 
+by dividing out the fit and analyzed as a decaying sinusoid to extract the TID dephasing rate 
+k_TID and beat frequency.
+
+### Project 2 — Low Temperature TDPL with Cryostat
+Repeats the TDPL protocol at cryogenic temperatures (down to 4 K via liquid helium cryostat) 
+for rubrene and tetracene. Lower temperature reduces phonon scattering, extending spin 
+coherence times and potentially revealing beats that are washed out at room temperature. Also 
+probes how triplet diffusion rates — and therefore Transport-Induced Dephasing (TID) severity — 
+change with temperature, testing whether TID weakens when hopping slows.
+
+### Project 3 — Sum Frequency Generation (SFG) *(exploratory)*
+Proof-of-concept for an ultrafast TDPL detection scheme. A 1030 nm probe pulse combines with 
+rubrene's ~600 nm emission in a nonlinear crystal to produce a UV SFG signal (~374 nm). 
+Because SFG intensity depends on the instantaneous fluorescence intensity at the probe's 
+arrival time, scanning the probe path length maps out the fluorescence decay with picosecond 
+resolution — far beyond the timing jitter of standard TCSPC electronics. First milestone: confirm 
+detection of a UV SFG signal.
+
+## Techniques
+- Time-Correlated Single Photon Counting (TCSPC / TDPL)
+- Physical Vapor Transport (PVT) crystal growth — rubrene, tetracene, DPH
+- Cryostat operation (liquid helium, 4 K)
+- Sum Frequency Generation (SFG)
+- Optical microscopy for crystal characterization
+
+## Analysis
+Scripts in Python and MATLAB for:
+- Bi-exponential + bi-power-law TDPL fitting
+- Quantum beat extraction and decaying sinusoid fitting
+- k_TID vs. (f_AA − f_BB)² analysis to extract 2D triplet diffusion time τ₂D
+- PL enhancement ratio calculation across field/temperature/density sweeps
+
+## Affiliation
+Biaggio Research Group, Department of Physics, Lehigh University  
+Collaborators: Zachary Rex, Ivan Biaggio
