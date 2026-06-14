@@ -1,2 +1,3 @@
 # Physics-REU-lehigh-summer-2026
-Data + Readings (Rubrene+Tytracene exp)
+Code for Tytracene data
+
