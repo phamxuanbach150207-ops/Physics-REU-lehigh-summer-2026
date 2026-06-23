@@ -13,23 +13,22 @@ from Data_Toolbox import (
     normalize, time_converter, integrated_yield_in_window
 )
 
-# ── Parameters ────────────────────────────────────────────────────────────────
+# Parameters
 DATA_PATH = r"F:\Physics REU Lehigh 2026\Data\june 8\tetracene_lf_angle_sweep.xlsx"
-DT        = 0.016       # ns per channel
-T1, T2    = 0.0, 10.0  # integration window (ns)
+DT        = 0.016      
+T1, T2    = 0.0, 10.0  
 N_COLS    = 20
-ZF_COL    = 1           # 1-indexed zero-field column
+ZF_COL    = 1        
 
-# ── Load ──────────────────────────────────────────────────────────────────────
 data = get_data(DATA_PATH)
 
-# ── Zero-field reference ──────────────────────────────────────────────────────
+# Zero-field reference 
 y_zf = normalize(truncate_to_peak(extract_column(data, ZF_COL)))
 t_zf = time_converter(y_zf, DT)
 zf_integral = integrated_yield_in_window(t_zf, y_zf, T1, T2)
 print(f"Zero-field integral: {zf_integral:.4f}")
 
-# ── Plot ──────────────────────────────────────────────────────────────────────
+# Plot 
 fig, ax = plt.subplots(figsize=(10, 6))
 cmap = plt.cm.viridis
 
