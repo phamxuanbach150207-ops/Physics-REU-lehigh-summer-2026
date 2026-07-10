@@ -1,70 +1,55 @@
-# Physics REU 2026 — Biaggio Research Group, Lehigh University
+# Fluorescence Enhancement in Tetracene Single Crystals
 
-Undergraduate research conducted Summer 2026 in the Biaggio Research Group (Lehigh University) 
-as part of the NSF REU program. This repository documents experimental work, data analysis 
-scripts, and results across three projects investigating singlet fission, triplet-pair spin dynamics, 
-and nonlinear optics in organic semiconductors.
+Magnetic field-dependent boost/quench analysis of triplet-triplet annihilation in tetracene, extending prior rubrene Monte Carlo simulations and benchmarking against classical Merrifield-Swenberg theory.
 
-## Research Context
+**Physics REU, Ivan Biaggio Research Group — Lehigh University, Summer 2026**
 
-Singlet fission is a process in which a photoexcited singlet exciton (S₁) splits into two 
-spin-entangled triplet excitons (T₁+T₁). Because the triplet pair begins in a net spin-0 state, 
-its spin wavefunction evolves coherently under the triplet-pair Hamiltonian — the sum of the 
-zero-field splitting (ZFS) term and the Zeeman term from any applied magnetic field. When the 
-pair re-encounters, fusion back to a singlet (and thus photon emission) requires spin-0 character, 
-so the time-oscillating singlet probability directly modulates fluorescence — producing measurable 
-quantum beats in time-resolved photoluminescence (TDPL) data.
+## Overview
 
-This work builds on a recently published result from the group (Rex, Pham Xuan, Curran, Biaggio, 
-*On the amplitude of fluorescence quantum beats from the fusion of entangled triplet exciton 
-pairs*) and focuses on extending that framework to magnetic-field-dependent PL enhancement, 
-cryogenic transport measurements, and a proof-of-concept ultrafast detection scheme.
+Magnetic fields are known to enhance or suppress (boost/quench) fluorescence in organic semiconductor crystals through triplet-triplet annihilation processes. This effect is well documented in rubrene but had only been preliminarily explored in this group. This project extends the analysis to tetracene — a system less susceptible to competing photophysical effects, and the crystal historically used by Merrifield and Swenberg in their original treatments of the boost/quench phenomenon — making it a strong candidate for testing simulation predictions against non-simulated numerical models.
 
-## Projects
+The repository contains the data processing pipeline, boost/quench curve generation, and Monte Carlo simulation code used to characterize magnetic anisotropy in tetracene single crystals.
 
-### Project 1 — Magnetic Field Induced Photoluminescence Enhancement
-Measures how an applied magnetic field changes total photon emission and the time-resolved 
-fluorescence shape in rubrene, tetracene, and DPH. The field shifts spin eigenstate energies, 
-altering the integrated singlet-regeneration probability and thus the fluorescence yield. Key 
-variables: field strength, field orientation (a/b/c axes and ab-plane rotation), temperature, 
-excitation density (geminate vs. non-geminate triplet-pair populations), and pulsed vs. CW 
-illumination.
+## Background
 
-PL enhancement is quantified as ΔPL/PL₀ = [PL(B) − PL(0)] / PL(0).
+Triplet pairs generated via singlet fission can either fuse back into a singlet exciton (boosting fluorescence) or annihilate into different spin states (quenching fluorescence), depending on the strength and orientation of an applied magnetic field relative to the crystal axes. Mapping this angular and field-strength dependence provides a probe into the underlying triplet pair spin dynamics and zero-field splitting parameters of the crystal.
 
-TDPL traces are fit with a bi-exponential + bi-power-law baseline; quantum beats are isolated 
-by dividing out the fit and analyzed as a decaying sinusoid to extract the TID dephasing rate 
-k_TID and beat frequency.
+## What This Project Does
 
-### Project 2 — Low Temperature TDPL with Cryostat
-Repeats the TDPL protocol at cryogenic temperatures (down to 4 K via liquid helium cryostat) 
-for rubrene and tetracene. Lower temperature reduces phonon scattering, extending spin 
-coherence times and potentially revealing beats that are washed out at room temperature. Also 
-probes how triplet diffusion rates — and therefore Transport-Induced Dephasing (TID) severity — 
-change with temperature, testing whether TID weakens when hopping slows.
+- Processes time-correlated single photon counting (TCSPC) data from pulsed time-resolved photoluminescence (TDPL) measurements on tetracene, using rubrene and DPH as comparative reference systems
+- Computes boost/quench ratios across field-angle and temperature combinations
+- Constructs boost/quench-vs-field-strength curves for three perpendicular crystal orientations to identify saturation thresholds and detect anisotropy
+- Generates a full 3D anisotropy map of triplet pair fusion kinetics from a 360° angle sweep spanning the ab-plane and c-axis
+- Extends existing rubrene Monte Carlo boost/quench simulations to tetracene
+- Benchmarks simulated and experimental results against classical Merrifield and Swenberg models
 
-### Project 3 — Sum Frequency Generation (SFG) *(exploratory)*
-Proof-of-concept for an ultrafast TDPL detection scheme. A 1030 nm probe pulse combines with 
-rubrene's ~600 nm emission in a nonlinear crystal to produce a UV SFG signal (~374 nm). 
-Because SFG intensity depends on the instantaneous fluorescence intensity at the probe's 
-arrival time, scanning the probe path length maps out the fluorescence decay with picosecond 
-resolution — far beyond the timing jitter of standard TCSPC electronics. First milestone: confirm 
-detection of a UV SFG signal.
+## Repository Structure
 
-## Techniques
-- Time-Correlated Single Photon Counting (TCSPC / TDPL)
-- Physical Vapor Transport (PVT) crystal growth — rubrene, tetracene, DPH
-- Cryostat operation (liquid helium, 4 K)
-- Sum Frequency Generation (SFG)
-- Optical microscopy for crystal characterization
+```
+├── Tool_box.py                  # Core data loading, normalization, and peak alignment pipeline
+├── Boosts_Quench_curves.py      # Boost/quench ratio calculation and curve generation
+├── Plotting_hopping_curve.py    # Field-angle sweep visualization and hopping curve plots
+├── monte_carlo/                 # Monte Carlo simulation code (rubrene → tetracene extension)
+├── data/                        # Raw and processed TCSPC datasets (angle sweeps, field sweeps)
+└── results/                     # Generated boost/quench curves and anisotropy maps
+```
 
-## Analysis
-Scripts in Python and MATLAB for:
-- Bi-exponential + bi-power-law TDPL fitting
-- Quantum beat extraction and decaying sinusoid fitting
-- k_TID vs. (f_AA − f_BB)² analysis to extract 2D triplet diffusion time τ₂D
-- PL enhancement ratio calculation across field/temperature/density sweeps
+## Tech Stack
 
-## Affiliation
-Biaggio Research Group, Department of Physics, Lehigh University  
-Collaborators: Zachary Rex, Ivan Biaggio
+- **Python** — data processing, curve fitting, simulation
+- **PicoHarp 300** — TCSPC acquisition hardware
+- **NumPy / SciPy / Matplotlib** — numerical analysis and visualization
+
+## Results
+
+- Mapped boost/quench behavior across 20 field-angle/temperature combinations and 18 field strengths per orientation
+- Resolved magnetic anisotropy in tetracene across three perpendicular field orientations
+- Reproduced field-dependent fluorescence behavior in simulation, benchmarked against Merrifield and Swenberg models
+
+## Related Publication
+
+Z. Rex, B. Pham Xuan, G. Curran III, I. Biaggio, *"On the amplitude of fluorescence quantum beats from the fusion of entangled triplet exciton pairs,"* Department of Physics, Lehigh University (submitted for peer review, June 2026).
+
+## Acknowledgments
+
+This work builds on prior boost/quench simulation code and experimental methodology developed by Zach and Jace within the Biaggio Research Group, and follows the analysis framework outlined in Chapter 7 of prior thesis work on rubrene (Curran, 2025).
