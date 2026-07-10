@@ -1,0 +1,124 @@
+####################################################################### 
+# 
+# This file contains crystal structure data downloaded from the 
+# Cambridge Structural Database (CSD) hosted by the Cambridge 
+# Crystallographic Data Centre (CCDC).
+# 
+# Full information about CCDC data access policies and citation 
+# guidelines are available at http://www.ccdc.cam.ac.uk/access/V1 
+# 
+# Audit and citation data items may have been added by the CCDC. 
+# Please retain this information to preserve the provenance of 
+# this file and to allow appropriate attribution of the data. 
+# 
+#######################################################################
+
+data_TETCEN
+#This CIF has been generated from an entry in the Cambridge Structural Database
+_database_code_depnum_ccdc_archive 'CCDC 1269538'
+_database_code_CSD               TETCEN
+loop_
+_citation_id
+_citation_doi
+_citation_year
+1 10.1107/S0365110X62000699 1962
+_audit_creation_method           'Created from the CSD'
+_audit_update_record             
+;
+2026-07-10 downloaded from the CCDC.
+;
+_database_code_NBS               527235
+_chemical_formula_moiety         'C18 H12'
+_chemical_name_systematic        Tetracene
+_chemical_absolute_configuration unk
+_diffrn_ambient_temperature      295
+_exptl_crystal_density_diffrn    1.301
+#These two values have been output from a single CSD field.
+_refine_ls_R_factor_gt           0.098
+_refine_ls_wR_factor_gt          0.098
+_diffrn_radiation_probe          x-ray
+_symmetry_cell_setting           triclinic
+_symmetry_space_group_name_H-M   'P -1'
+_symmetry_Int_Tables_number      2
+_space_group_name_Hall           '-P 1'
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 x,y,z
+2 -x,-y,-z
+_cell_length_a                   7.900
+_cell_length_b                   6.030
+_cell_length_c                   13.530
+_cell_angle_alpha                100.30
+_cell_angle_beta                 113.20
+_cell_angle_gamma                86.30
+_cell_volume                     582.85
+_cell_formula_units_Z            2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+C1 C 0.11940 0.03310 0.38900
+C11 C 0.14940 0.15640 0.32190
+C12 C 0.08110 0.07240 0.20400
+C13 C 0.10940 0.18990 0.13600
+C14 C 0.04670 0.10890 0.02110
+C15 C 0.06910 0.22280 -0.05160
+C16 C -0.00350 -0.14050 0.16370
+C17 C -0.03780 -0.26460 0.23550
+C18 C 0.02670 -0.18320 0.34830
+H1 H 0.16800 0.10000 0.47000
+H8 H 0.21200 0.31700 0.34900
+H9 H 0.17600 0.35400 0.16500
+H10 H 0.13400 0.38800 -0.02200
+H11 H -0.09500 -0.42500 0.20200
+H12 H 0.01100 -0.27900 0.40000
+C14A C -0.04670 -0.10890 -0.02110
+C16A C 0.00350 0.14050 -0.16370
+C15A C -0.06910 -0.22280 0.05160
+C13A C -0.10940 -0.18990 -0.13600
+C12A C -0.08110 -0.07240 -0.20400
+C17A C 0.03780 0.26460 -0.23550
+H10A H -0.13400 -0.38800 0.02200
+H9A H -0.17600 -0.35400 -0.16500
+C11A C -0.14940 -0.15640 -0.32190
+C18A C -0.02670 0.18320 -0.34830
+H11A H 0.09500 0.42500 -0.20200
+C1A C -0.11940 -0.03310 -0.38900
+H8A H -0.21200 -0.31700 -0.34900
+H12A H -0.01100 0.27900 -0.40000
+H1A H -0.16800 -0.10000 -0.47000
+C2 C -0.45720 -0.43200 0.37870
+C3 C -0.52010 -0.31390 0.29300
+C4 C -0.50030 -0.41360 0.19470
+C5 C -0.55750 -0.29930 0.10480
+C6 C -0.53620 -0.38600 0.00520
+C7 C -0.59480 -0.27580 -0.08320
+C8 C -0.42420 -0.63510 0.18110
+C9 C -0.36940 -0.74320 0.26850
+C10 C -0.38520 -0.66260 0.36450
+H2 H -0.46900 -0.35000 0.45400
+H3 H -0.57500 -0.14800 0.30500
+H4 H -0.61400 -0.13000 0.11400
+H5 H -0.64900 -0.11300 -0.07200
+H6 H -0.31500 -0.91100 0.25300
+H7 H -0.34500 -0.75400 0.42500
+C6A C -0.46380 -0.61400 -0.00520
+C8A C -0.57580 -0.36490 -0.18110
+C7A C -0.40520 -0.72420 0.08320
+C5A C -0.44250 -0.70070 -0.10480
+C4A C -0.49970 -0.58640 -0.19470
+C9A C -0.63060 -0.25680 -0.26850
+H5A H -0.35100 -0.88700 0.07200
+H4A H -0.38600 -0.87000 -0.11400
+C3A C -0.47990 -0.68610 -0.29300
+C10A C -0.61480 -0.33740 -0.36450
+H6A H -0.68500 -0.08900 -0.25300
+C2A C -0.54280 -0.56800 -0.37870
+H3A H -0.42500 -0.85200 -0.30500
+H7A H -0.65500 -0.24600 -0.42500
+H2A H -0.53100 -0.65000 -0.45400
+
+#END
