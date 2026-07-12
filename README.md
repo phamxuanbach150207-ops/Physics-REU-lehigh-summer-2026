@@ -1,3 +1,5 @@
 # Physics-REU-lehigh-summer-2026
-Code for Tytracene data
+Code for tytracene data
+Simulation
+3D mapping
 
